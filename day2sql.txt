@@ -1,0 +1,88 @@
+create database day1;
+use  day1;
+create table student(stroll int,stname varchar(30),age int);
+desc student;
+alter table student add gender varchar(20);
+alter table student modify stname varchar(25);
+drop table student;
+select * from student;
+insert into student values(1,'Raj',18,'male');
+insert into student values(2,'Aj',19,'male');
+insert into student values(3,'Joe',16,'female');
+select * from student where age=18;
+select age from student where age>18;
+update student set stroll=102 where stroll=1;
+update student set age=25 where age=16;
+delete from student;
+truncate  table student;
+
+
+
+use day1;
+create table staff(stname varchar(20),age int,dept varchar(20),salary int);
+desc staff;
+insert into staff values('Vk',25,'hr',30000);
+insert into staff values('Hero',21,'sales',60000);
+insert into staff values('Devil',35,'finance',10000);
+insert into staff values('King',51,'IT',25000);
+alter table staff add stid int;
+alter table staff modify stname varchar(25);
+alter table staff rename column stname to sname;
+alter table staff drop column stid; 
+select * from staff;
+select sname,dept from staff;
+select * from staff where salary>50000;
+set sql_safe_updates=0;
+delete from staff;
+truncate table staff;
+
+
+
+use day1;
+create table product(pname varchar(20),price int,weight int,quality varchar(20));
+desc product;
+insert into product values('mobile',25000,20,'good');
+insert into product values('tv',30000,30,'good');
+insert into product values('remote',200,23,'medium');
+insert into product values('bottle',50,20,'bad');
+alter table product modify quality varchar(23);
+update product set price=230 where price=200;
+select * from product;
+select * from product where weight > 20;
+delete from product;
+truncate table product;
+
+
+use day1;
+create table customer(cname varchar(10),age int,gender varchar(20),purchaseditem varchar(20));
+drop table customer;
+insert into  customer values('john',15,'female','mobile');
+insert into  customer values('tomy',19,'male','case');
+insert into  customer values('dora',12,'female','battery');
+desc customer;
+select * from customer;
+alter table customer add cid int;
+alter table customer modify cname varchar(15); 
+select * from customer where gender='male';
+delete from customer;
+truncate table customer;
+
+
+use day1;
+drop  table emp;
+create table Emp(eno int,ename varchar(30),desg char(3),salary int);
+insert into emp values(1,'john','hr',20000);
+insert into emp values(2,'dhoni','pl',30000);
+insert into emp values(3,'vk','bs',40000);
+alter table emp add deptno int;
+alter table emp  drop column deptno;
+alter table emp modify desg char(5);
+set sql_safe_updates=0;
+update emp set ename='raju' where ename='john' ;
+select * from emp;
+
+
+
+
+
+
